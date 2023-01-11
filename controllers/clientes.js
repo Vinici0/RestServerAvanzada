@@ -18,9 +18,18 @@ const getAllClientes = async (req = request, res = response) => {
 };
 
 const getClienteById = async (req = request, res = response) => {
-  res.json({
-    msg: "get API - controlador",
-  });
+
+  const {id} = req.params;
+
+  try {
+    const cliente = await Cliente.findById(id);
+    res.json(cliente);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      msg: "Hable con el administrador",
+    });
+  }
 };
 
 const createCliente = async (req = request, res = response) => {
@@ -49,15 +58,31 @@ const createCliente = async (req = request, res = response) => {
 };
 
 const updateCliente = async (req = request, res = response) => {
-  res.json({
-    msg: "put API - controlador",
+  const { id } = req.params;
+  const { _id, estado, ...data } = req.body;
+
+  if (data.nombre) {
+    data.nombre = data.nombre.toUpperCase();
+  }
+
+  if (data.apellido) {
+    data.apellido = data.apellido.toUpperCase();
+  }
+
+  const cliente = await Cliente. findByIdAndUpdate(id, data, {
+    new: true,
   });
+
+  res.json(cliente);
 };
 
 const deleteCliente = async (req = request, res = response) => {
-  res.json({
-    msg: "delete API - controlador",
-  });
+  const { id } = req.params;
+
+  const cliente = await Cliente.findOneAndDelete(id);
+
+  res.json(cliente);
+
 };
 
 module.exports = {
