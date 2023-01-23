@@ -10,13 +10,14 @@ class Server {
 
     this.path = {
       clientePath: "/api/clientes",
+      usuarioPath: "/api/usuarios",
     };
 
-     //Conectar a base de datos
-     this.ConectorDB();
-
-    // Middlewares
+    //Conectar a base de datos
+    this.ConectorDB();
+    
     this.middleware();
+    // Middlewares
 
     this.router();
   }
@@ -26,14 +27,15 @@ class Server {
   }
 
   middleware() {
-    //CORS
+    
     this.app.use(cors());
-    //lectura y parseo del body
+
     this.app.use(express.json());
   }
 
   router() {
     this.app.use(this.path.clientePath, require("../routes/clientes.js"));
+    this.app.use(this.path.usuarioPath, require("../routes/usuarios.js"));
   }
 
   listen() {

@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 // Toda la configuración de la base de datos se encuentra en el archivo .env
 const dbConnection = async () => {
   try {
+    // mongoose.set("strictQuery", false);
     await mongoose.connect(process.env.MONGODB_AUTH);
     console.log("DB Online");
   } catch (error) {

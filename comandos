@@ -1,0 +1,5 @@
+ssh ubuntu@54.165.251.47 -i node.pem
+
+
+
+ssh ubuntu@3.84.199.203  -i grupounido.pem

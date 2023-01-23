@@ -34,9 +34,16 @@ const ClienteSchema = Schema({
     descripcion: {
         type: String,
     },
-    estado: {
+    estadoRegistro: {
         type: Boolean,
         default: false,
+    },
+    estadoAprobado: {
+        type: Boolean,
+        default: false,
+    },
+    foto: {
+        type: String,
     },
 });
 
