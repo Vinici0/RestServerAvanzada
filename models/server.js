@@ -9,13 +9,15 @@ class Server {
     this.port = process.env.PORT;
 
     this.path = {
-      clientePath: "/api/clientes",
       usuarioPath: "/api/usuarios",
+      loginPath: "/api/login",
+      cursoPath: "/api/cursos",
+      uploadPath: "/api/uploads",
     };
 
     //Conectar a base de datos
     this.ConectorDB();
-    
+
     this.middleware();
     // Middlewares
 
@@ -27,15 +29,18 @@ class Server {
   }
 
   middleware() {
-    
+
     this.app.use(cors());
 
     this.app.use(express.json());
   }
 
   router() {
-    this.app.use(this.path.clientePath, require("../routes/clientes.js"));
     this.app.use(this.path.usuarioPath, require("../routes/usuarios.js"));
+    this.app.use(this.path.loginPath, require("../routes/auth.js"));
+    this.app.use(this.path.cursoPath, require("../routes/cursos.js"));
+    this.app.use(this.path.uploadPath, require("../routes/uploads.js"));
+
   }
 
   listen() {
