@@ -10,3 +10,6 @@ Este comando es esencial para poder ejecutar proyectos de Node.js que utilizan p
 **Ejecutar el proyecto** <br>
 *npm start o nodemon .\dist\app* <br>
 se ejecuta el archivo especificado ".\dist\app" y monitorea los cambios en los archivos de la aplicación, reiniciando automáticamente el servidor cuando se detectan cambios. Es útil para el desarrollo de aplicaciones Node.js. <br>
+
+
+### PROYECTO PROGRAMACIÓN AVANZADA UNIDAD 3
