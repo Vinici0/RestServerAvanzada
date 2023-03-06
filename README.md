@@ -18,3 +18,4 @@ se ejecuta el archivo especificado ".\dist\app" y monitorea los cambios en los a
 - Borja Vinicio
 - Enriquez Selena
 - Parraga Maria
+- Perfecto
