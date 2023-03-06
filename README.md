@@ -13,3 +13,8 @@ se ejecuta el archivo especificado ".\dist\app" y monitorea los cambios en los a
 
 
 ### PROYECTO PROGRAMACIÓN AVANZADA <br>
+*INTEGRANRES*
+- Acosta Daniela
+- Borja Vinicio
+- Enriquez Selena
+- Parraga Maria
